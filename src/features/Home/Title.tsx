@@ -3,7 +3,7 @@ import React from "react";
 import { motion } from "framer-motion";
 
 import { Domine } from "next/font/google";
-import { Box } from "@mui/material";
+import { Box, Typography } from "@mui/material";
 
 export const domine = Domine({
   subsets: ["latin"],
@@ -13,7 +13,7 @@ export const domine = Domine({
 
 function Title() {
   return (
-    <Box sx={{ width: "30%" }}>
+    <Box>
       <motion.div
         initial={{ opacity: 0, filter: "blur(10px)", scale: 0.96 }}
         animate={{ opacity: 1, filter: "blur(0px)", scale: 1 }}
@@ -22,11 +22,9 @@ function Title() {
           ease: [0.4, 0.0, 0.2, 1],
         }}
       >
-        <img
-          src="/title.png"
-          style={{ width: "100%" }}
-          alt="title"
-        />
+        <Typography>
+          
+        </Typography>
       </motion.div>
     </Box>
   );

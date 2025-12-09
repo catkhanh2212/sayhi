@@ -1,26 +1,24 @@
 import Head from "next/head";
-import styles from "@/styles/Home.module.css";
-// import animation from "../../public/animations/starry.json";
-// import LottieBackground from "@/components/backgrounds/LottieBackground";
+import StageOne from "@/features/Home/StageOne";
+import { useState } from "react";
+import StageTwo from "@/features/Home/StageTwo";
 
 export default function Home() {
+  const [stage, setStage] = useState<"stage1" | "stage2">("stage1");
+
   return (
     <>
       <Head>
-        <title>Create Next App</title>
+        <title>Bé Voi Say Hi</title>
       </Head>
 
-      <div className={styles.page}>
-        <main
-          className={styles.main}
-          style={{ position: "relative", zIndex: 0 }}
-        >
-          <div style={{ position: "relative", minHeight: "100vh", width: '100vw' }}>
-            {/* <LottieBackground animationData={animation} /> */}
+      {stage === "stage1" && (
+        <StageOne onFinish={() => setStage("stage2")} />
+      )}
 
-          </div>
-        </main>
-      </div>
+      {stage === "stage2" && (
+        <StageTwo />
+      )}
     </>
   );
 }

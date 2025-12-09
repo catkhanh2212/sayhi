@@ -1,16 +1,16 @@
 import "@/styles/globals.css";
 import type { AppProps } from "next/app";
-import { Playfair_Display } from "next/font/google";
+import { Italiana } from "next/font/google";
 
-const playfair = Playfair_Display({
+const italiana = Italiana({
   subsets: ["latin"],
-  weight: ["400", "500", "700"],
-  variable: "--font-playfair",
+  weight: "400",
+  variable: "--font-italiana",
 });
 
 export default function App({ Component, pageProps }: AppProps) {
   return (
-    <div className={playfair.variable}>
+    <div className={italiana.variable}>
       <Component {...pageProps} />
     </div>
   );
